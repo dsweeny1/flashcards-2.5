@@ -13,6 +13,22 @@ class Game {
   printQuestion(round) {
       util.main(round);
   }
+
+  createCards() {
+    
+  }
+
+  createDeck() {
+
+  }
+
+  createNewRound() {
+
+  }
+
+  start() {
+
+  }
 }
 
 module.exports = Game;
