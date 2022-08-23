@@ -52,6 +52,10 @@ describe('Round', function() {
         expect(round).to.be.an.instanceOf(Round)
     })
 
+    it('Should be able to hold the deck of cards', () => {
+        expect(round.deck).to.deep.equal([card1, card2, card3, card4])
+    })
+
     it('Should be able to return the current card', () => {
         const currentCard = round.returnCurrentCard()
         expect(currentCard).to.equal(card1)
@@ -65,8 +69,13 @@ describe('Round', function() {
         expect(round.turns).to.equal(4)
     })
 
+    it('Should add to incorrect guesses when the user gets it wrong', () => {
+        round.takeTurn('guess')
+        expect(round.incorrectGuesses.length).to.equal(1)
+    })
+
     it('Should be able to check if the answer is correct or incorrect', () => {
-        expect(round.takeTurn('object')).to.equal('You got it right!')
+        expect(round.takeTurn('object')).to.equal('Correct!')
         expect(round.takeTurn('guess')).to.equal('Nope! Try Again!')
     })
 

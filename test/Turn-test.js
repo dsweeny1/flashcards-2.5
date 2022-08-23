@@ -28,6 +28,14 @@ describe('Turn', function() {
         expect(turn).to.be.an.instanceOf(Turn)
     })
 
+    it('Should be able to hold the user/s guess', () => {
+        expect(turn.userGuess).to.equal('mutator method')
+    })
+
+    it('Should be able to hold the user/s card', () => {
+        expect(turn.card).to.equal(card3)
+    })
+
     it('Should return the user/s guess', () => {
         expect(turn.userGuess).to.equal('mutator method')
     })

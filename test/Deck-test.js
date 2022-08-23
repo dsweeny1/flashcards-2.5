@@ -46,6 +46,10 @@ describe('Deck', function() {
         expect(deck).to.be.an.instanceOf(Deck)
       })
 
+      it('Should be able to have cards', () => {
+        expect(deck.cards).to.deep.equal([card1, card2, card3, card4])
+      })
+
       it('Should be able to get the card length', () => {
         expect(deck.cards.length).to.equal(4)
       })
