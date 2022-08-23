@@ -18,9 +18,7 @@ class Round {
         const feedback = turn.giveFeedback()
         if (feedback === 'Nope! Try Again!') {
             this.incorrectGuesses.push(this.currentCard.id)
-        } if (this.turns === 30) {
-            console.log(this.endRound())
-        }
+        } 
         return feedback
     }
 
@@ -32,6 +30,8 @@ class Round {
 
     endRound() {
         const message = `** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`;
+        console.timeLog(`Game Run Time`)
+        console.log(message)
         return message;
     }
 }

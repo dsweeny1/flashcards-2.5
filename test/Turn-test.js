@@ -41,6 +41,6 @@ describe('Turn', function() {
     })
 
     it('Should be able to give feedback', () => {
-        expect(turn.giveFeedback()).to.equal(`You got it right!`)
+        expect(turn.giveFeedback()).to.equal(`Correct!`)
     })
 })

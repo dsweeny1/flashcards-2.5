@@ -22,7 +22,7 @@ class Turn {
 
     giveFeedback = () => {
         if (this.evaluateGuess() === true) {
-            return `You got it right!`
+            return `Correct!`
         } else {
             return `Nope! Try Again!`
         }
