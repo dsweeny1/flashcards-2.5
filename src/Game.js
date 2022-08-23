@@ -3,7 +3,7 @@ const Card = require('./Card');
 const Deck = require('./Deck');
 const Round = require('./Round');
 const data = require('./data');
-const prototypeQuestions = data.prototypeData;
+const entireDeck = data.prototypeData;
 const util = require('./util');
 
 class Game {
@@ -12,8 +12,8 @@ class Game {
   }
 
   createCards() {
-    const card = new Card(prototypeQuestions)
-    let cards = prototypeQuestions.map(card => {
+    const card = new Card(entireDeck)
+    let cards = entireDeck.map(card => {
       return new Card(card.id, card.question, card.answers, card.correctAnswer)
     })
     this.cards = cards
@@ -35,7 +35,7 @@ class Game {
     this.printMessage(this.createDeck(), this.createNewRound());
     this.printQuestion(this.createNewRound());
   }
-  
+
   printQuestion(round) {
       util.main(round);
   }

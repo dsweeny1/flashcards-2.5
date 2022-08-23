@@ -24,12 +24,12 @@ class Round {
 
     calculatePercentCorrect() {
         const percent = this.turns - this.incorrectGuesses.length;
-        const percentCorrect = (percent / this.turns) * 100;
+        const percentCorrect = parseFloat((percent / this.turns) * 100);
         return percentCorrect
     }
 
     endRound() {
-        const message = `** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`;
+        const message = `** Round over! ** You answered ${this.calculatePercentCorrect().toFixed(2)}% of the questions correctly!`;
         console.timeLog(`Game Run Time`)
         console.log(message)
         return message;
