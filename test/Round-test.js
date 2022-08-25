@@ -3,11 +3,9 @@ const expect = chai.expect;
 const Card = require('../src/Card');
 const Deck = require('../src/Deck');
 const Round = require('../src/Round');
-const Turn = require('../src/Turn');
 
 describe('Round', function() {
     let deck;
-    let turn;
     let card1;
     let card2;
     let card3;
@@ -40,7 +38,6 @@ describe('Round', function() {
             "accessor method"
           );
           deck = new Deck([card1, card2, card3, card4]);
-          turn = new Turn()
           round = new Round(deck);
       });
 
@@ -57,8 +54,7 @@ describe('Round', function() {
     })
 
     it('Should be able to return the current card', () => {
-        const currentCard = round.returnCurrentCard()
-        expect(currentCard).to.equal(card1)
+        expect(round.returnCurrentCard()).to.equal(card1)
     })
 
     it('Should increment with each turn taken', () => {
@@ -67,6 +63,14 @@ describe('Round', function() {
         round.takeTurn()
         round.takeTurn()
         expect(round.turns).to.equal(4)
+    })
+
+    it('Should update the current card with each turn taken', () => {
+        round.returnCurrentCard()
+        expect(round.currentCard).to.equal(card1)
+        round.takeTurn("object", card1)
+        round.returnCurrentCard()
+        expect(round.currentCard).to.equal(card2)
     })
 
     it('Should add to incorrect guesses when the user gets it wrong', () => {

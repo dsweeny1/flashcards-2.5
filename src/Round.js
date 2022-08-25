@@ -9,7 +9,7 @@ class Round {
     }
 
     returnCurrentCard() {
-           return (this.currentCard = this.deck[this.turns])
+           return this.currentCard = this.deck[this.turns]
     }
 
     takeTurn(guess) {
@@ -30,8 +30,8 @@ class Round {
 
     endRound() {
         const message = `** Round over! ** You answered ${this.calculatePercentCorrect().toFixed(2)}% of the questions correctly!`;
-        console.timeLog(`Game Run Time`)
         console.log(message)
+        console.timeLog(`Game Run Time`)
         return message;
     }
 }
